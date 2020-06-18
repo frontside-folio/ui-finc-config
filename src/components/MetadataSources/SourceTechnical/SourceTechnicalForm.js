@@ -18,8 +18,25 @@ import RepeatableField from '../../DisplayUtils/RepeatableField';
 import RepeatableFieldValidUrl from '../../DisplayUtils/RepeatableFieldValidUrl';
 
 import BasicCss from '../../BasicStyle.css';
+import FindSource from './FindSource/FindSource';
 
 class SourceTechnicalForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.columnMapping =
+    {
+      name: 'Label',
+      id: 'SourceId',
+    };
+
+    const intialSource = {};
+
+    this.state = {
+      source: intialSource,
+    };
+  }
+
   render() {
     const { accordionId, expanded, onToggle } = this.props;
     const dataOptionsSolrShard = [
@@ -174,7 +191,7 @@ class SourceTechnicalForm extends React.Component {
         </div>
         <Row>
           <Col xs={8}>
-            <Field
+            {/* <Field
               component={TextField}
               fullWidth
               id="addsource_updateRhythm"
@@ -184,7 +201,7 @@ class SourceTechnicalForm extends React.Component {
                 </FormattedMessage>}
               name="updateRhythm"
               placeholder="Enter a update rhythm for the metadata source"
-            />
+            /> */}
           </Col>
         </Row>
         {/* inferiorTo (is repeatable) ... */}
@@ -212,6 +229,37 @@ class SourceTechnicalForm extends React.Component {
             </Col>
           </Row>
         </div>
+
+        {/* inferiorTo PLUGIN to find source */}
+        {/* <div>
+          <Row>
+            <FormattedMessage id="ui-finc-config.source.inferiorTo">
+              {ariaLabel => (
+                <FieldArray
+                  ariaLabel={ariaLabel}
+                  component={FindSource}
+                  id="display_inferior_to"
+                  label="Displayinferiorto"
+                  // add name to the array-field, which should be changed
+                  name="inferiorTo"
+                  intialSource={this.state.source}
+                  stripes={this.props.stripes}
+                  {...this.props}
+                />
+              )}
+            </FormattedMessage>
+          </Row>
+        </div> */}
+        {/* test for single saving -> need to uncomment real updateRhythm above !!!! */}
+        <Field
+          component={FindSource}
+          fullWidth
+          id="addsource_updateRhythm"
+          name="updateRhythm"
+          intialSource={this.state.source}
+          stripes={this.props.stripes}
+          {...this.props}
+        />
       </Accordion>
     );
   }
@@ -221,6 +269,7 @@ SourceTechnicalForm.propTypes = {
   accordionId: PropTypes.string.isRequired,
   expanded: PropTypes.bool,
   onToggle: PropTypes.func,
+  stripes: PropTypes.object,
 };
 
 export default SourceTechnicalForm;

@@ -256,5 +256,14 @@ export default stripesFinalForm({
     setOrganization: (args, state, tools) => {
       tools.changeValue(state, 'organization', () => args[0]);
     },
+    // setSource: (args, state, tools) => {
+    //   tools.changeValue(state, 'mdSource', () => args[0]);
+    // },
+    // setSource: (args, state, tools) => {
+    //   tools.changeValue(state, 'inferiorTo', () => args[0]);
+    // },
+    setSource: (args, state, tools) => {
+      tools.changeValue(state, 'updateRhythm', () => args[0]);
+    },
   },
 })(MetadataSourceForm);
