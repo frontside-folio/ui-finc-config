@@ -206,7 +206,7 @@ class SourceTechnicalForm extends React.Component {
           </Col>
         </Row>
         {/* inferiorTo (is repeatable) ... */}
-        <div className={BasicCss.addMarginBottomAndTop}>
+        {/* <div className={BasicCss.addMarginBottomAndTop}>
           <Row>
             <Label className={BasicCss.styleForFormLabel}>
               <FormattedMessage id="ui-finc-config.source.inferiorTo" />
@@ -229,9 +229,7 @@ class SourceTechnicalForm extends React.Component {
               </FormattedMessage>
             </Col>
           </Row>
-        </div>
-
-        Baustelle inferiorTo:
+        </div> */}
 
 
         {/* inferiorTo PLUGIN to find source */}
@@ -260,7 +258,7 @@ class SourceTechnicalForm extends React.Component {
           </Row>
         </div>
         {/* test for single saving -> need to uncomment real updateRhythm above !!!! */}
-        <Field
+        {/* <Field
           component={FindSource}
           fullWidth
           id="addsource_updateRhythm"
@@ -268,7 +266,7 @@ class SourceTechnicalForm extends React.Component {
           intialSource={this.state.source}
           stripes={this.props.stripes}
           {...this.props}
-        />
+        /> */}
       </Accordion>
     );
   }

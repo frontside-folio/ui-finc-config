@@ -23,6 +23,10 @@ class FindSource extends React.Component {
   }
 
   selectSource = (s) => {
+
+    console.log('schnabeltier');
+    console.log(s);
+
     this.props.form.mutators.setSource(s.id);
 
     this.setState(() => {
@@ -77,8 +81,9 @@ class FindSource extends React.Component {
               ariaLabel="Add metadata source"
               component={TextField}
               fullWidth
-              id="addcollection_mdSource"
-              name="mdSource.name"
+              id="addsource_inferiorTo"
+              // name={this.props.id}
+              name={"inferiorTo"}
               placeholder="Please add a metadata source"
               readOnly
             />
@@ -98,6 +103,7 @@ FindSource.propTypes = {
       setSource: PropTypes.func,
     }),
   }),
+  id: PropTypes.string,
 };
 
 export default FindSource;

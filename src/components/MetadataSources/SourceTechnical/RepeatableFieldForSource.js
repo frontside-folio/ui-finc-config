@@ -14,6 +14,7 @@ import FindSource from './FindSourceForInferiorTo/FindSource';
 class RepeatableFieldForSource extends React.Component {
   static propTypes = {
     fields: PropTypes.object,
+    stripes: PropTypes.object,
   };
 
   render() {
@@ -26,11 +27,13 @@ class RepeatableFieldForSource extends React.Component {
             <Row key={index}>
               <Col xs={8}>
                 <Field
+                  component={FindSource}
                   ariaLabel={`inferiorTo #${parseInt(index + 1, 10)}`}
                   name={elem}
                   id={elem}
-                  component={FindSource}
                   fullWidth
+                  stripes={this.props.stripes}
+                  {...this.props}
                 />
               </Col>
               <Col xs={1}>
@@ -40,7 +43,7 @@ class RepeatableFieldForSource extends React.Component {
                 />
               </Col>
             </Row>
-          ))}
+          ))} 
         </Col>
         <Col xs={4}>
           <Button onClick={() => fields.push('')}>+ Add</Button>
