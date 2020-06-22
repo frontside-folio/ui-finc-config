@@ -15,10 +15,11 @@ import {
 
 import { IntRequired } from '../../DisplayUtils/Validate';
 import RepeatableField from '../../DisplayUtils/RepeatableField';
+import RepeatableFieldForSource from './RepeatableFieldForSource';
 import RepeatableFieldValidUrl from '../../DisplayUtils/RepeatableFieldValidUrl';
 
 import BasicCss from '../../BasicStyle.css';
-import FindSource from './FindSource/FindSource';
+import FindSource from './FindSourceForInferiorTo/FindSource';
 
 class SourceTechnicalForm extends React.Component {
   constructor(props) {
@@ -230,26 +231,34 @@ class SourceTechnicalForm extends React.Component {
           </Row>
         </div>
 
+        Baustelle inferiorTo:
+
+
         {/* inferiorTo PLUGIN to find source */}
-        {/* <div>
+        <div className={BasicCss.addMarginBottomAndTop}>
           <Row>
-            <FormattedMessage id="ui-finc-config.source.inferiorTo">
-              {ariaLabel => (
-                <FieldArray
-                  ariaLabel={ariaLabel}
-                  component={FindSource}
-                  id="display_inferior_to"
-                  label="Displayinferiorto"
-                  // add name to the array-field, which should be changed
-                  name="inferiorTo"
-                  intialSource={this.state.source}
-                  stripes={this.props.stripes}
-                  {...this.props}
-                />
-              )}
-            </FormattedMessage>
+            <Label className={BasicCss.styleForFormLabel}>
+              <FormattedMessage id="ui-finc-config.source.inferiorTo" />
+            </Label>
           </Row>
-        </div> */}
+          <Row>
+            <Col xs={12}>
+              <FormattedMessage id="ui-finc-config.source.inferiorTo">
+                {ariaLabel => (
+                  <FieldArray
+                    ariaLabel={ariaLabel}
+                    component={RepeatableFieldForSource}
+                    id="display_inferior_to"
+                    label="Displayinferiorto"
+                    // add name to the array-field, which should be changed
+                    name="inferiorTo"
+                    {...this.props}
+                  />
+                )}
+              </FormattedMessage>
+            </Col>
+          </Row>
+        </div>
         {/* test for single saving -> need to uncomment real updateRhythm above !!!! */}
         <Field
           component={FindSource}
@@ -268,6 +277,7 @@ class SourceTechnicalForm extends React.Component {
 SourceTechnicalForm.propTypes = {
   accordionId: PropTypes.string.isRequired,
   expanded: PropTypes.bool,
+  fields: PropTypes.object,
   onToggle: PropTypes.func,
   stripes: PropTypes.object,
 };
