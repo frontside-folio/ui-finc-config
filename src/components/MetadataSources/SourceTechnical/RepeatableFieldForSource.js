@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
+// import { Field } from 'react-final-form';
 
 import {
   Button,
@@ -25,11 +25,13 @@ class RepeatableFieldForSource extends React.Component {
           {fields.map((elem, index) => (
             <Row key={index}>
               <Col xs={8}>
-                <Field
-                  component={FindSource}
+                <FindSource
+                  // component={FindSource}
                   ariaLabel={`inferiorTo #${parseInt(index + 1, 10)}`}
-                  name={`inferiorTo[${parseInt(index, 10)}]`}
-                  id={`inferiorTo[${parseInt(index, 10)}]`}
+                  name={elem}
+                  id={elem}
+                  fields={fields}
+                  index={index}
                   fullWidth
                   // this is necessary for connecting with mutator
                   {...this.props}
