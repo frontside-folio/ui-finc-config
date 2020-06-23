@@ -19,7 +19,7 @@ import RepeatableFieldForSource from './RepeatableFieldForSource';
 import RepeatableFieldValidUrl from '../../DisplayUtils/RepeatableFieldValidUrl';
 
 import BasicCss from '../../BasicStyle.css';
-import FindSource from './FindSourceForInferiorTo/FindSource';
+// import FindSource from './FindSourceForInferiorTo/FindSource';
 
 class SourceTechnicalForm extends React.Component {
   constructor(props) {
@@ -31,11 +31,11 @@ class SourceTechnicalForm extends React.Component {
       id: 'SourceId',
     };
 
-    const intialSource = {};
+    // const intialSource = {};
 
-    this.state = {
-      source: intialSource,
-    };
+    // this.state = {
+    //   source: intialSource,
+    // };
   }
 
   render() {

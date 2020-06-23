@@ -260,7 +260,7 @@ export default stripesFinalForm({
     //   tools.changeValue(state, 'mdSource', () => args[0]);
     // },
     setSource: (args, state, tools) => {
-       tools.changeValue(state, 'inferiorTo', () => args);
+      tools.changeValue(state, 'inferiorTo', () => args);
       // state.formState.values.inferiorTo.forEach((i) => {
       //   tools.changeValue(state, `inferiorTo[${i}]`, () => args[0]);
       // });

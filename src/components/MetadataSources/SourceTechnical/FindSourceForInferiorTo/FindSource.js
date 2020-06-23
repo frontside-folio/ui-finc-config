@@ -14,6 +14,10 @@ import { Pluggable } from '@folio/stripes/core';
 import BasicCss from '../../../BasicStyle.css';
 
 class FindSource extends React.Component {
+  static propTypes = {
+    id: PropTypes.string,
+  };
+
   constructor(props) {
     super(props);
 
@@ -23,10 +27,6 @@ class FindSource extends React.Component {
   }
 
   selectSource = (s) => {
-
-    console.log('schnabeltier');
-    console.log(s);
-
     this.props.form.mutators.setSource(s.id);
 
     this.setState(() => {
@@ -83,7 +83,7 @@ class FindSource extends React.Component {
               fullWidth
               id="addsource_inferiorTo"
               // name={this.props.id}
-              name={"inferiorTo"}
+              name="inferiorTo"
               placeholder="Please add a metadata source"
               readOnly
             />
@@ -103,7 +103,6 @@ FindSource.propTypes = {
       setSource: PropTypes.func,
     }),
   }),
-  id: PropTypes.string,
 };
 
 export default FindSource;
