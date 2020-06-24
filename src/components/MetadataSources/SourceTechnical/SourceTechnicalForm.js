@@ -31,11 +31,13 @@ class SourceTechnicalForm extends React.Component {
       id: 'SourceId',
     };
 
-    // const intialSource = {};
+    const intialSource = props.metadataSource.inferiorTo || [];
 
-    // this.state = {
-    //   source: intialSource,
-    // };
+    console.log(intialSource);
+
+    this.state = {
+      source: intialSource,
+    };
   }
 
   render() {
@@ -192,7 +194,7 @@ class SourceTechnicalForm extends React.Component {
         </div>
         <Row>
           <Col xs={8}>
-            {/* <Field
+            <Field
               component={TextField}
               fullWidth
               id="addsource_updateRhythm"
@@ -202,7 +204,7 @@ class SourceTechnicalForm extends React.Component {
                 </FormattedMessage>}
               name="updateRhythm"
               placeholder="Enter a update rhythm for the metadata source"
-            /> */}
+            />
           </Col>
         </Row>
         {/* inferiorTo (is repeatable) ... */}
@@ -250,6 +252,8 @@ class SourceTechnicalForm extends React.Component {
                     label="Displayinferiorto"
                     // add name to the array-field, which should be changed
                     name="inferiorTo"
+                    intialSource={this.state.source}
+                    metadataSource={this.props.metadataSource}
                     {...this.props}
                   />
                 )}
@@ -257,16 +261,6 @@ class SourceTechnicalForm extends React.Component {
             </Col>
           </Row>
         </div>
-        {/* test for single saving -> need to uncomment real updateRhythm above !!!! */}
-        {/* <Field
-          component={FindSource}
-          fullWidth
-          id="addsource_updateRhythm"
-          name="updateRhythm"
-          intialSource={this.state.source}
-          stripes={this.props.stripes}
-          {...this.props}
-        /> */}
       </Accordion>
     );
   }
@@ -278,6 +272,9 @@ SourceTechnicalForm.propTypes = {
   fields: PropTypes.object,
   onToggle: PropTypes.func,
   stripes: PropTypes.object,
+  metadataSource: PropTypes.shape({
+    inferiorTo: PropTypes.arrayOf(PropTypes.string)
+  }),
 };
 
 export default SourceTechnicalForm;

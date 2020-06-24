@@ -227,6 +227,7 @@ class MetadataSourceForm extends React.Component {
                 <SourceTechnicalForm
                   accordionId="editSourceTechnical"
                   expanded={sections.editSourceTechnical}
+                  metadataSource={initialValues}
                   onToggle={this.handleSectionToggle}
                   {...this.props}
                 />

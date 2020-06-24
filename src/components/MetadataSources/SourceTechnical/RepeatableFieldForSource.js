@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Field } from 'react-final-form';
+import { Field } from 'react-final-form';
 
 import {
   Button,
   Col,
   IconButton,
   Row,
+  TextField,
 } from '@folio/stripes/components';
 
 import FindSource from './FindSourceForInferiorTo/FindSource';
@@ -29,7 +30,7 @@ class RepeatableFieldForSource extends React.Component {
                   // component={FindSource}
                   ariaLabel={`inferiorTo #${parseInt(index + 1, 10)}`}
                   name={elem}
-                  id={elem}
+                  elem={elem}
                   fields={fields}
                   index={index}
                   fullWidth

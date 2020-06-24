@@ -15,7 +15,7 @@ import BasicCss from '../../../BasicStyle.css';
 
 class FindSource extends React.Component {
   static propTypes = {
-    id: PropTypes.string,
+    elem: PropTypes.string,
     index: PropTypes.string,
     fields: PropTypes.arrayOf(PropTypes.string),
   };
@@ -23,14 +23,14 @@ class FindSource extends React.Component {
   constructor(props) {
     super(props);
 
-    const s = props.intialSource || {};
+    const s = props.intialSource || [];
 
     this.inputSourceId = s.id;
   }
 
   selectSource = (s) => {
-    // this.props.form.mutators.setSource(s.id);
-    this.props.form.mutators.setSource(this.props.fields[this.props.index] = s.id);
+    this.props.form.mutators.setSource(s.id);
+    // this.props.form.mutators.setSource(this.props.fields[this.props.index] = s.id);
 
     this.setState(() => {
       return s.id;
@@ -85,8 +85,8 @@ class FindSource extends React.Component {
               component={TextField}
               fullWidth
               id="addsource_inferiorTo"
-              name={this.props.id}
-              // name="inferiorTo"
+              // "inferiorTo[0]
+              name={this.props.elem}
               placeholder="Please add a metadata source"
               readOnly
             />
