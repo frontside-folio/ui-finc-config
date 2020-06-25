@@ -261,10 +261,11 @@ export default stripesFinalForm({
     //   tools.changeValue(state, 'mdSource', () => args[0]);
     // },
     setSource: (args, state, tools) => {
-      tools.changeValue(state, 'inferiorTo', () => args);
-      // state.formState.values.inferiorTo.forEach((i) => {
-      //   tools.changeValue(state, `inferiorTo[${i}]`, () => args[0]);
-      // });
+      // tools.changeValue(state, 'inferiorTo', () => args);
+      state.formState.values.inferiorTo.forEach((element, index) => {
+        // tools.changeValue(state, `inferiorTo[${index}]`, () => element);
+        tools.changeValue(state, `inferiorTo[${index}]`, () => args[0]);
+      });
     },
     // setSource: (args, state, tools) => {
     //   tools.changeValue(state, 'updateRhythm', () => args[0]);

@@ -99,7 +99,7 @@ class FindSource extends React.Component {
 
 FindSource.propTypes = {
   intialSourceId: PropTypes.string,
-  intialSource: PropTypes.object,
+  intialSource: PropTypes.arrayOf(PropTypes.string),
   stripes: PropTypes.object,
   form: PropTypes.shape({
     mutators: PropTypes.shape({
