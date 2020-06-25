@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
+// import { Field } from 'react-final-form';
 
 import {
   Button,
   Col,
   IconButton,
   Row,
-  TextField,
 } from '@folio/stripes/components';
 
 import FindSource from './FindSourceForInferiorTo/FindSource';

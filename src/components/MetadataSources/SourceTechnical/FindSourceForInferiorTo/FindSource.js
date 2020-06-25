@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import { Field } from 'react-final-form';
 
 import {
   Col,
-  Label,
   Row,
   TextField,
 } from '@folio/stripes/components';
 import { Pluggable } from '@folio/stripes/core';
-
-import BasicCss from '../../../BasicStyle.css';
 
 class FindSource extends React.Component {
   static propTypes = {
@@ -68,13 +64,6 @@ class FindSource extends React.Component {
 
     return (
       <React.Fragment>
-        <Row>
-          <Label className={BasicCss.styleForFormLabel}>
-            <FormattedMessage id="ui-finc-config.collection.mdSource">
-              {(msg) => msg}
-            </FormattedMessage>
-          </Label>
-        </Row>
         <Row>
           <Col xs={4}>
             { pluggable }

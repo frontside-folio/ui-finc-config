@@ -33,8 +33,6 @@ class SourceTechnicalForm extends React.Component {
 
     const intialSource = props.metadataSource.inferiorTo || [];
 
-    console.log(intialSource);
-
     this.state = {
       source: intialSource,
     };
